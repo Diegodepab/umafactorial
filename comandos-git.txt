@@ -1,0 +1,124 @@
+#nota: El fichero comandos-git.txt, introduzca comentarios describiendo exhaustivamente qué hace cada comando y por qué es necesario, para guiar a los futuros empleados
+Iré por encima recapitulando cada ítem que se realizo, no obstante avisar que esta practica la hice a lo largo de varios días por comodidad, lo cual significa que no tengo la consola git con todos los comandos, inicialmente espero que no me falte ni uno pero si es así se invita al empleado a buscar y aprender por su cuenta:
+
+PASOS DE CONFIGURACION ->
+	// Open Git Bash here 
+Explicacion: Lo mas comodo es dedicarle un espacio conocido donde trabajaremos, en la carpeta que se asignara para copiar el repositorio usar botón derecho y seleccionar Open Git Bash here para abrir la consola con la url ya asignada 
+	// git config user.name nombre_de_usuario_solo_caracteres_alfanumericos_sin_espacios
+	// git config user.email dirección_de_email_aunque_sea_ficticia
+Explicacion: Git no permitirá realizar commits si esos valores no están configurados. No tienen que ser necesariamente reales; se usan únicamente para firmar los commits.
+
+ítem 1 ->
+	// git clone https://github.com/Diegodepab/umafactorial.git
+El comando "git clone" nos permite clonar un repositorio, en este caso un repositorio existente de GitHub especificado por la URL (esta se puede conseguir en github al darle code HTTP en el repositorio deseado)
+
+ítem 2 ->
+Explicacion: Hay apartados donde no sé usan comandos, simplemende se modifican archivos los cuales posteriormente serán añadidos o actualizados. Si se salta algún item fue por esto mismo
+
+ítem 3 ->
+	// cd umafactorial
+Explicación: Se creo la carpeta umafactorial al clonarla, pero nos encontramos fuera de ella, para navegar entre carpetas es recomendable usar los comando ls (observas la lista de archivos en la carpeta actual) y cd (entras en alguna de dichas carpetas)
+	// git status	
+Explicación: Es bastante útil saber que enumera los archivos que se han preparado, los que están sin preparar y los archivos sin seguimiento.
+NOTA: Es bastante util usar git status antes y despúes de realizar cambios para monitorear el proceso
+	// git add factorial.java
+Explicación: Guarda nuevos ficheros o cambios ya existentes en el staging area, un lugar logico donde se guardan los cambios antes de confirmarlos	
+	// git commit -m "implementacion inicial"
+Explicación: registra los cambios realizados que estan guardados en el stanging area, es decir podemos etiquetar una explicación sencillas al cumulo de cambios que tenemos sin subir por el momento
+	// git status
+	
+ítem 4 -> (en este item todos los comandos fueron explicados, si quieres observar más sobre los cambios ir a los Commits del propio documento
+ 	// git status
+	// git add factorial.java
+	// git commit -m "refactorizacion"
+ 	// git status
+
+ítem 5 ->
+	// git push origin main
+Explicacion: Sube los commits realizados (archivos añadidos o modificaciones)
+	// git checkout -b recursivo
+Explicacion: Revisamos la rama recursiva, en este caso de no existir crea la rama y nos introduce en ella
+	// git status
+Explicacion: Tambien nos informa si estamos en la rama recursiva y si todo esta en orden
+
+ítem 7 ->
+	// git add factorial.java
+	// git commit -m "implementacion recursiva"
+	// git push origin recursivo
+Explicacion: esta vez estaremos trabajando en la rama recursiva
+	// git status
+
+ítem 8 ->
+	// git checkout main
+Explicación: Cambiamos a la rama principal (esta vez checkout no crea nada)
+	// git status
+	
+ítem 10 ->
+ 	// git status
+	// git add factorial.java
+	// git commit -m "correccion numeros negativos"
+ 	// git status
+
+ITEM 11 ->
+ 	// git checkout recursivo
+ 	// git status
+	// git add factorial.java
+	// git commit -m "optimizacion"
+ 	// git status
+
+ítem 12 ->
+	// git checkout main 
+ 	// git merge recursivo
+Explicacion: fusiona los cambios de la rama indicada en la rama actual, es decir los cambios de recursivo se añadiran en la rama main
+A mi me genero conflictos por haber borrado un } y unos espacios pero facilmente editable
+
+ítem 13 ->
+ 	// git checkout -b refacIO
+ 	// git status
+
+ítem 14 ->
+ 	// git status
+	// git add factorial.java
+	// git commit -m "“refactorizacion de metodo de entrada" (si el nombre le puse un " por error)
+ 	// git status
+
+ítem 15 ->
+ 	// git stash
+Explicacion: parecido al commit pero es un guardado temporal sin tener que subirlos o acumularlos. permitiendo cambiar de rama o acciones que comprometerían cambios
+	// git checkout main
+
+ítem 16 ->
+	// git add factorial.java
+	// git commit -m "cambio de long a BigInteger"
+ 	// git status
+ 	// git push origin main
+	
+	// git checkout refacIO
+ 	// git stash pop
+Explicacion: Retomamos los cambios (o archivos añadidos) que guardamos temporalmente del stash anteriormente usado
+	// git add factorial.java
+	// git commit -m "refactorizacion de metodo de salida"
+ 	// git status
+
+ítem 17 ->
+	// git checkout main
+ 	// git merge refacIO
+
+ítem 19 ->
+ 	// git status
+	// git add factorial.java
+	// git commit -m "“mezcla de rama refacIO" 
+	// git push origin main
+ 	// git status
+
+(futuro) 
+ítem 21 ->
+	//  git add comandos-git.txt
+	// git commit -m "adicion de historial de línea de comandos"
+	//  git push --all origin
+
+ítem 22 ->
+	// gitk --all
+Explicacion: muestra los cambios en un repositorio o un conjunto seleccionado de commits. Esto incluye la visualización del gráfico de commits, información relacionada con cada commit y los archivos en los árboles de cada revisión. 
+
+
